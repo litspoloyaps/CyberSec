@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cybersecurity Data Management</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: 
+                radial-gradient(circle, rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+                url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #00ffcc;
+            text-align: center;
+        }
+
+        header {
+            background: rgba(0,0,0,0.7);
+            padding: 20px;
+            box-shadow: 0 0 15px #00ffcc;
+        }
+
+        h1 {
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px #00ffcc;
+        }
+
+        nav ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        nav ul li {
+            display:inline-block;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration:none;
+            color:#00ffcc;
+            border: 1px solid #00ffcc;
+            padding: 5px 12px;
+            border-radius: 5px;
+        }
+
+        .container {
+            margin-top: 100px;
+            background: rgba(0,0,0,0.5);
+            padding: 20px;
+            border-radius: 15px;
+            display: inline-block;
+        }
+
+        .visualizer {
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            height: 100px;
+            gap: 5px;
+            margin-top: 40px;
+        }
+
+        .bar {
+            width: 12px;
+            background: #00ffcc;
+            animation: bounce 1s infinite ease-in-out alternate;
+        }
+
+        .bar:nth-child(2) { animation-delay: .1s; }
+        .bar:nth-child(3) { animation-delay: .2s; }
+        .bar:nth-child(4) { animation-delay: .3s; }
+        .bar:nth-child(5) { animation-delay: .4s; }
+        .bar:nth-child(6) { animation-delay: .5s; }
+
+        @keyframes bounce {
+            from { height: 20px;}
+            to { height: 100px;}
+        }
+
+        button {
+            background:#00ffcc;
+            color:black;
+            border:none;
+            padding:15px 25px;
+            font-weight:bold;
+            border-radius:8px;
+            cursor:pointer;
+            margin-top:30px;
+            box-shadow:0 0 10px #00ffcc;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.7);
+            padding: 10px;
+            color: #00ffcc;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <h1>Cybersecurity Data Management</h1>
+        <ul>
+            <li><a class="active" href="#">Home</a></li>
+        </ul>
+    </nav>
+</header>
+
+<audio id="bgMusic" autoplay loop>
+    <source src="audio.mp3" type="audio/mpeg">
+    <source src="output.wav" type="audio/wav">
+</audio>
+
+<div class="container">
+    <h2>🔊 SYSTEM ONLINE</h2>
+    <p>Audio will auto-play when you enter the site</p>
+
+    <button onclick="playAudio()">Start Audio</button>
+
+    <div class="visualizer">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+</div>
+
+<footer>© 2025 Cybersecurity Data Management</footer>
+
+<script>
+    const audio = document.getElementById("bgMusic");
+
+    function playAudio(){
+        audio.play();
+    }
+
+    window.addEventListener("load", () => {
+        audio.play().catch(() => {
+            console.log("Autoplay blocked. Click Start Audio");
+        });
+    })
+</script>
+
+</body>
+</html>
